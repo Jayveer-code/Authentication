@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <h1>Register</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>
+            <label for="id_first_name">First name:</label>
+            <input type="text" name="first_name" id="id_first_name" required>
+        </p>
+        <p>
+            <label for="id_last_name">Last name:</label>
+            <input type="text" name="last_name" id="id_last_name" required>
+        </p>
+        <p>
+            <label for="id_dob">Date of Birth:</label>
+            <input type="date" name="dob" id="id_dob" required>
+        </p>
+        <p>
+            <label for="id_email">Email:</label>
+            <input type="email" name="email" id="id_email" required>
+        </p>
+        <p>
+            <label for="id_username">Username:</label>
+            <input type="text" name="username" id="id_username" required>
+        </p>
+        <p>
+            <label for="id_password1">Password:</label>
+            <input type="password" name="password1" id="id_password1" required>
+        </p>
+        <p>
+            <label for="id_password2">Confirm Password:</label>
+            <input type="password" name="password2" id="id_password2" required>
+        </p>
+        <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+   
+</body>
+</html>
